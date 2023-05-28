@@ -14,7 +14,7 @@ class Task {
 	}
 }
 
-const getAllTasks = () => {
+const getAllTasks =  () => {
 	try {
 		const data = fs.readFileSync(dataFilePath,'utf8')
 		const jsonData = JSON.parse(data)

@@ -24,8 +24,7 @@ const deleteTask = (id) => {
 }
 
 module.exports ={
-	
-		getTasks: getTasks,
+	getTasks: getTasks,
 	getTaskById: getTaskById,
 	createTask: createTask,
 	updateTask: updateTask,

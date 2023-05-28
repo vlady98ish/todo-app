@@ -38,8 +38,9 @@
 .checkbox{
     width: 20px;
     height: 20px;
+    cursor: pointer;
 }
 
-.done{
+.completed{
     text-decoration: line-through;
 }
