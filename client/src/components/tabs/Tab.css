@@ -1,0 +1,32 @@
+.tab{
+    padding: 10px 25px;
+    color: #808080;
+    font-weight: bold;
+}
+
+
+
+.tab:hover{
+    background: #D5D5D5;
+    opacity: 0.8;
+}
+
+ul{
+    margin-top: 46px;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.tab_container{
+    display: flex;
+}
+
+.tab:active{
+    color: #3A72CA;
+    border-bottom: 2px solid #3A72CA;
+}
+

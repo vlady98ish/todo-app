@@ -1,0 +1,45 @@
+.task{
+    background: #F3F6F7;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 24px;
+    color: #4F4F4F;
+    font-weight: bold;
+}
+
+.task_list{
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    margin-top: 55px;
+    max-height: 70vh;
+    overflow-y: auto;
+    scroll-margin: 10px;
+}
+
+.task_list::-webkit-scrollbar {
+    width: 0; /* Hide the default scrollbar for WebKit browsers */
+}
+
+.task_list::-webkit-scrollbar-thumb {
+    background: transparent; /* Set the thumb background color as transparent */
+}
+
+.task_list::-webkit-scrollbar-track {
+    background: transparent; /* Set the track background color as transparent */
+}
+
+.inline{
+    display: inline;
+}
+
+.checkbox{
+    width: 20px;
+    height: 20px;
+}
+
+.done{
+    text-decoration: line-through;
+}

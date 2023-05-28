@@ -1,0 +1,21 @@
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  overflow: hidden;
+  padding: 24px;
+  margin: 0 auto;
+}
+
+
+.flex{
+  display: flex;
+}
+
+li{
+  list-style-type: none;
+  cursor: pointer;
+}
