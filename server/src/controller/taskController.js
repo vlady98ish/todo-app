@@ -1,7 +1,13 @@
 
 const taskService = require("../service/taskService")
 const getTasks = (req,res) => {
-	const result = taskService.getTasks()
+	let result = taskService.getTasks()
+	const {status} = req.query
+	console.log(`Query ${status}`)
+	if(status && status !=="all"){
+		result = result.filter(task => task.status === status)
+		console.table(result)
+	}
 	if(result.err){
 			res.status(500).set('Content-Type', 'application/json').json(result)
 	} else{

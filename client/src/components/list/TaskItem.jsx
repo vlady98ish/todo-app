@@ -6,6 +6,7 @@ const TaskItem = ({task,onDelete,onUpdate}) => {
 	const {id,title,status} = task
 	
 	const [taskStatus, setTaskStatus] = useState(status);
+	
 	const isCompleted = taskStatus === "completed"
 	const handleCheckboxChange = (event) => {
 		const { checked } = event.target;

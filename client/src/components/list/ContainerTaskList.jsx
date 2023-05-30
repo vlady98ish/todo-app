@@ -2,12 +2,14 @@ import React, {useEffect,useState} from 'react';
 import TaskItem from "./TaskItem";
 import {deleteTask, getTasks, updateTask} from "../../services/taskService";
 import {ERROR, showToastMessage, sortByStatus, SUCCESS} from "../../util/helper";
+import {useContext} from "react";
+import TabContext from "../../context/TabContext";
 
 
 const ContainerTaskList = () => {
 	const  [taskList, setTaskList] = useState()
 	const [isError,setIsError] = useState(false)
-	
+	const {activeTab} = useContext(TabContext)
 	const handleDelete = async (id) => {
 		const response = await deleteTask(id)
 		if(response.status === 200){
@@ -19,6 +21,8 @@ const ContainerTaskList = () => {
 		}
 		
 	}
+	
+	
 	
 	const handleUpdate = async (id,status) => {
 		const response = await updateTask(id,status)
@@ -39,7 +43,8 @@ const ContainerTaskList = () => {
 	}
 	
 	useEffect(() => {
-		getTasks()
+		console.log(activeTab)
+		getTasks(activeTab)
 			.then((response) => {
 				if(response.status === 200){
 					console.log(response)
@@ -58,7 +63,7 @@ const ContainerTaskList = () => {
 				showToastMessage(ERROR, 'Error fetching tasks:',error.message)
 			})
 		
-	},[])
+	},[activeTab])
 	
 	
 	return (
