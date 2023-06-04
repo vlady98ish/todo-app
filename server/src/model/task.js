@@ -54,7 +54,7 @@ const createTask = (task) => {
 		jsonData.tasks.push(newTask)
 		fs.writeFileSync(dataFilePath,JSON.stringify(jsonData))
 		
-		return taskID
+		return newTask
 	} catch (err){
 			console.error("Error creating task in JSON file.")
 			return {err: err.message}

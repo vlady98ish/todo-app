@@ -63,10 +63,8 @@ const ContainerTaskList = () => {
 				showToastMessage(ERROR, 'Error fetching tasks:'+error.message)
 			})
 		
-	},[])
-	useEffect(() =>{
+	},[activeTab])
 	
-	})
 	let filteredTasks = tasks;
 	if (activeTab === 'active') {
 		filteredTasks = tasks.filter(task => task.status === "active");

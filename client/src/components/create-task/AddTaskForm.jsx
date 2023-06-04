@@ -1,13 +1,15 @@
-import React, {useRef, useState} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import InputField from "./InputField";
 import Button from "./Button";
 import "./CreateTask.css"
 import "../../App.css"
 import {addTask} from "../../services/taskService";
 import {ERROR, showToastMessage, SUCCESS} from "../../util/helper";
+import Context from "../../context/Context";
 
 const AddTaskForm = () => {
 	const [taskName, setTaskName] = useState("")
+	const {tasks,updateTasks} = useContext(Context)
 	const inputRef = useRef(null);
 	const handleChange = (e) =>{
 		e.preventDefault()
@@ -21,20 +23,19 @@ const AddTaskForm = () => {
 			"title": taskName,
 				"status": "active"
 		}
-		addTask(task)
-			.then((response) =>{
-				if(response.status ===200){
+		try{
+			addTask(task)
+				.then((response) => {
 					console.log(response)
 					console.log(response.data)
+					const updatedTaskList = [response.data,...tasks]
+					console.log(updatedTaskList)
+					updateTasks(updatedTaskList)
 					showToastMessage(SUCCESS, "Task added successfully")
-				}
-				else if(response.status === 500){
-					showToastMessage(ERROR, "Create task failed ")
-				}
-			})
-			.catch(error => {
-				showToastMessage(ERROR, 'Error adding task:',error.message)
-			})
+				})
+		}catch (error){
+			showToastMessage(ERROR, "Create task failed ")
+		}
 		inputRef.current.value = ''
 		
 	}
