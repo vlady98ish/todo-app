@@ -1,0 +1,39 @@
+.statistic_container{
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+}
+
+.statistic_item{
+    display: flex;
+    flex-direction: column;
+justify-content: center;
+    gap: 16px;
+    align-items: start;
+    padding: 8px 16px 16px 16px;
+    border-radius: 12px;
+    width: 300px;
+    height: 80px;
+    background-color: #3A72CA;
+    color: white;
+}
+
+.title{
+    font-size: 18px;
+}
+
+.count{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.all_stat{
+    background-color: #FC9E23;
+}
+
+.active_stat{
+    background-color: #1F01B9;
+}
+.completed_stat{
+    background-color: #ABE188;
+}

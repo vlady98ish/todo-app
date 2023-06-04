@@ -17,6 +17,10 @@ input{
     gap: 24px;
 }
 
+.mt{
+    margin-top: 24px;
+}
+
 .btn{
     border: none;
     background: #12C6D6;

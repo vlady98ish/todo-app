@@ -1,10 +1,8 @@
 import axios from "axios"
 const API_URL = "http://localhost:4000/tasks"
 
-export function getTasks(status){
-	const filter = {status: status}
-	const queryParams = new URLSearchParams(filter).toString();
-	return axios.get(API_URL+"?"+queryParams)
+export function getTasks(){
+	return axios.get(API_URL)
 }
 
 export function getTaskById(id){

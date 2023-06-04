@@ -2,14 +2,14 @@ import './App.css';
 import ToDoList from "./components/todolist/ToDoList";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {TabContextProvider} from "./context/TabContext";
+import {ContextProvider} from "./context/Context";
 function App() {
   return (
     <div className="App">
-      <TabContextProvider>
+      <ContextProvider>
       <ToastContainer/>
     <ToDoList/>
-      </TabContextProvider>
+      </ContextProvider>
     </div>
   );
 }

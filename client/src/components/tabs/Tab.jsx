@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import "./Tab.css"
-import TabContext from "../../context/TabContext";
+import Context from "../../context/Context";
 const Tab = ({name}) => {
-	const tabDetails = useContext(TabContext)
+	const tabDetails = useContext(Context)
 	const changeTab = () => {
 		tabDetails.changeTab(name.toLowerCase())
 		console.log(name.toLowerCase())

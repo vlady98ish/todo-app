@@ -39,7 +39,7 @@ const AddTaskForm = () => {
 		
 	}
 	return (
-		<form className="flex gap" onSubmit={submitForm}>
+		<form className="flex gap mt" onSubmit={submitForm}>
 			<InputField hint="New task..." handleChange={handleChange} inputRef={inputRef}/>
 			<Button />
 		</form>
